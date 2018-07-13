@@ -1,0 +1,11 @@
+D:\BaksApps\CoolApp\CoolApp\bin\Debug\netcoreapp2.0\CoolApp.deps.json
+D:\BaksApps\CoolApp\CoolApp\bin\Debug\netcoreapp2.0\CoolApp.runtimeconfig.json
+D:\BaksApps\CoolApp\CoolApp\bin\Debug\netcoreapp2.0\CoolApp.runtimeconfig.dev.json
+D:\BaksApps\CoolApp\CoolApp\bin\Debug\netcoreapp2.0\CoolApp.dll
+D:\BaksApps\CoolApp\CoolApp\bin\Debug\netcoreapp2.0\CoolApp.pdb
+D:\BaksApps\CoolApp\CoolApp\obj\Debug\netcoreapp2.0\CoolApp.csprojAssemblyReference.cache
+D:\BaksApps\CoolApp\CoolApp\obj\Debug\netcoreapp2.0\CoolApp.csproj.CoreCompileInputs.cache
+D:\BaksApps\CoolApp\CoolApp\obj\Debug\netcoreapp2.0\CoolApp.AssemblyInfoInputs.cache
+D:\BaksApps\CoolApp\CoolApp\obj\Debug\netcoreapp2.0\CoolApp.AssemblyInfo.cs
+D:\BaksApps\CoolApp\CoolApp\obj\Debug\netcoreapp2.0\CoolApp.dll
+D:\BaksApps\CoolApp\CoolApp\obj\Debug\netcoreapp2.0\CoolApp.pdb

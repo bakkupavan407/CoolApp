@@ -1,0 +1,22 @@
+<!-- <h1>Application says what is??</h1>
+<ul>
+  <li *ngFor="let value of apiValues">{{value}}</li>
+</ul>
+ -->
+ <h1>{{title}}</h1>
+ <ul>
+   <li>
+     <a href="/">Home</a>
+   </li>
+   <li>
+    <a href="/complaints">Complaints</a>
+  </li>
+ </ul>
+ <div>
+ <button mat-raised-button color="warn">Warn</button>
+  <br />
+    <div class="mat-app-background">
+      <mat-slider></mat-slider>
+    </div>
+  </div>
+ <router-outlet></router-outlet>
