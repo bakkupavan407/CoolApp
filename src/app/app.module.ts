@@ -20,12 +20,11 @@ import { MessagesComponent }    from './messages/messages.component';
 import { LandingComponent } from './landing/landing.component';
 import { AngMaterialModule } from './angmaterial';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatListModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { SiteNavComponent } from './site-nav/site-nav.component';
 
 const routes: Routes = [
-  { path: '', component: LandingComponent },
+  { path: '', component: ComplaintComponent },
   { path: 'complaints', component: ComplaintComponent },
   { path: 'dashboard', component: AdminDashboardComponent },
 ];
@@ -46,15 +45,7 @@ const routes: Routes = [
       AngMaterialModule,
       BrowserAnimationsModule,
       RouterModule.forRoot(routes),
-      MatGridListModule,
-      MatCardModule,
-      MatMenuModule,
-      MatIconModule,
-      MatButtonModule,
       LayoutModule,
-      MatToolbarModule,
-      MatSidenavModule,
-      MatListModule
   ],
   providers: [
     ComplaintService,

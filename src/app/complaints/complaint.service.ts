@@ -3,6 +3,7 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import {RequestOptions} from "@angular/http";
 
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
 
 import { Complaint } from './complaint';
@@ -35,9 +36,19 @@ export class ComplaintService {
     getAllComplaints() {
         return this.http.get('api/complaint/GetAllComplaints', httpOptions)
         .pipe(
+            map((response:Response)=> {
+                return response.json();
+            }),
             catchError(this.handleError('getAllComplaints', ''))
         );
     }
+
+    getHeroes (): Observable<Complaint[]> {
+        return this.http.get<Complaint[]>('api/complaint/GetAllComplaints', httpOptions)
+          .pipe(
+            catchError(this.handleError('getHeroes', []))
+          );
+      }
 
     getComplaintById(cid: any) {
         let myParams = new URLSearchParams();

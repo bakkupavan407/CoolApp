@@ -2,21 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
 
+import { Complaint } from '../complaints/complaint';
+import { ComplaintService } from '../complaints/complaint.service';
+
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
+  providers: [ ComplaintService ],
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit{
-  cards = [];
-  /** Based on the screen size, switch from standard to one column per row */
+  complaints: Complaint[];
+
+  constructor(private breakpointObserver: BreakpointObserver,
+    private complaintService: ComplaintService) {}
+
   ngOnInit() {
-    this.cards = [
-      {
-        title: "Heelo"
-      }
-    ]
+    this.getComps();
   }
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  getComps(): void {
+    this.complaintService.getHeroes()
+      .subscribe(heroes => this.complaints = heroes);
+  }
+  
 }
