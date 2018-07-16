@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
@@ -18,17 +19,24 @@ import { MessagesComponent }    from './messages/messages.component';
 
 import { LandingComponent } from './landing/landing.component';
 import { AngMaterialModule } from './angmaterial';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatListModule } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
+import { SiteNavComponent } from './site-nav/site-nav.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
-  { path: 'complaints', component: ComplaintComponent }
+  { path: 'complaints', component: ComplaintComponent },
+  { path: 'dashboard', component: AdminDashboardComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     ComplaintComponent,
-    LandingComponent
+    LandingComponent,
+    AdminDashboardComponent,
+    SiteNavComponent
   ],
   imports: [
       BrowserModule,
@@ -36,7 +44,17 @@ const routes: Routes = [
       HttpClientModule,
       HttpModule,
       AngMaterialModule,
-      RouterModule.forRoot(routes)
+      BrowserAnimationsModule,
+      RouterModule.forRoot(routes),
+      MatGridListModule,
+      MatCardModule,
+      MatMenuModule,
+      MatIconModule,
+      MatButtonModule,
+      LayoutModule,
+      MatToolbarModule,
+      MatSidenavModule,
+      MatListModule
   ],
   providers: [
     ComplaintService,
