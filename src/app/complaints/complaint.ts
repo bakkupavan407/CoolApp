@@ -5,4 +5,7 @@ export interface Complaint {
     mobile: number;
     reqsub: string;
     reqmessage: string;
+    reqstatus: string;
+    date: string;
+    admincoms: string;
 }
