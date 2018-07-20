@@ -138,7 +138,7 @@
                 <h3 class="card-title">150</h3>
               </div>
               <div class="card-footer">
-                <div class="stats">
+                <div class="stats" (click)="viewComplaints('all')">
                   <i class="material-icons">date_range</i> Click to view All
                 </div>
               </div>
@@ -154,7 +154,7 @@
                 <h3 class="card-title">75</h3>
               </div>
               <div class="card-footer">
-                <div class="stats">
+                <div class="stats" (click)="viewComplaints('InProgress')">
                   <i class="material-icons">local_offer</i> Click to view In Progress
                 </div>
               </div>
@@ -170,7 +170,7 @@
                 <h3 class="card-title">75</h3>
               </div>
               <div class="card-footer">
-                <div class="stats">
+                <div class="stats" (click)="viewComplaints('completed')">
                   <i class="material-icons">update</i> Click to view completed
                 </div>
               </div>
@@ -204,10 +204,13 @@
                         <th>
                           Message
                         </th>
+                        <th>
+                          Action
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let complaint of complaints">
+                      <tr *ngFor="let complaint of complaintsData">
                         <td>
                           {{complaint.id}}
                         </td>
@@ -223,14 +226,49 @@
                         <td>
                           {{complaint.reqmessage}}
                         </td>
+                        <td>
+                          <button type="button" class="btn btn-primary" [style.display]="complaint.reqstatus == 'completed' ? 'none' : ''" (click)="editComplaints(complaint)" data-toggle="modal" data-target="#exampleModal">Edit</button>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
+                <div *ngIf="!complaintsData.length" class="no-data">No data to display</div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">{{manageComplaints.reqsub}}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Request Message: {{manageComplaints.reqmessage}}</p>
+                    <div class="form-group">
+                      <label for="comment">Admin Comment:</label>
+                      <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                    <div>
+                      <p class="complaints-date">Date Raised: {{manageComplaints.date}}</p>
+                      <p class="complaints-date">Updated Date: {{currentDate}}</p>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
       </div>
     </div>
     <footer class="footer">

@@ -11582,7 +11582,8 @@
       border: 0; }
       .card .card-footer .author,
       .card .card-footer .stats {
-        display: inline-flex; }
+        display: inline-flex;
+        cursor: pointer; }
       .card .card-footer .stats {
         color: #999999; }
         .card .card-footer .stats .material-icons {
@@ -13013,6 +13014,9 @@
     .navbar-collapse .nav p {
       font-size: 1rem;
       margin: 0; } }
+    .no-data {
+      color: red;
+    }
   
   @media (min-width: 992px) {
     .main-panel .navbar .navbar-collapse .navbar-nav .nav-item .nav-link p {
