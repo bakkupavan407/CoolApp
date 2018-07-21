@@ -33,7 +33,10 @@ export class ComplaintComponent implements OnInit {
             email: email,
             mobile: mobile,
             reqsub: reqsub,
-            reqmessage: reqmessage
+            reqmessage: reqmessage,
+            reqstatus: "",
+            date: "",
+            admincoms: null
         };
 
         this.complaintservice.addComplaint(comp)
