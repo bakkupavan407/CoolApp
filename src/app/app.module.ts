@@ -24,11 +24,13 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { SiteNavComponent } from './site-nav/site-nav.component';
 
 import { DialogBodyComponent } from './dialog-body/dialog-body.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', component: ComplaintComponent },
+  { path: '', component: LandingComponent },
   { path: 'complaints', component: ComplaintComponent },
   { path: 'dashboard', component: AdminDashboardComponent },
+  { path: 'admin', component: LoginComponent }
 ];
 
 @NgModule({
@@ -38,7 +40,8 @@ const routes: Routes = [
     LandingComponent,
     AdminDashboardComponent,
     SiteNavComponent,
-    DialogBodyComponent
+    DialogBodyComponent,
+    LoginComponent
   ],
   imports: [
       BrowserModule,
