@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Router } from "@angular/router";
 import { Breakpoints, BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
 
 import { Complaint } from '../complaints/complaint';
@@ -23,10 +23,17 @@ export class AdminDashboardComponent implements OnInit {
 
   constructor(private breakpointObserver: BreakpointObserver,
     private complaintService: ComplaintService,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    public router: Router) { }
 
   ngOnInit() {
     //this.getComps();
+    const isLoggedIn = localStorage.getItem("admin");
+
+    if(!isLoggedIn) {
+      this.router.navigate(['/admin']);
+    }
+
     this.currentDate = new Date().toDateString();
     this.complaints = [{
       "id": 1,
@@ -106,21 +113,38 @@ export class AdminDashboardComponent implements OnInit {
     }
   }
 
-  editComplaints(data) {
-    console.log("omg");
-    this.manageComplaints = data;
+  editComplaints(selectedComplaint) {
+    console.log("omg", selectedComplaint);
+    // this.manageComplaints = data;
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = selectedComplaint;
+    dialogConfig.width = '600px';
+    dialogConfig.height = '500px';
+
+    const dialogRef = this.dialog.open(DialogBodyComponent, dialogConfig);
+  }
+
+  logout(e): void {
+    e.preventDefault();
+    localStorage.removeItem("admin");
+    this.router.navigate(['/']);
+  }
+
+  viewComplaint(selectedComplaint): void {
+    // console.log("$$$ ", selectedComplaint);
 
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.data = selectedComplaint;
+    dialogConfig.width = '600px';
+    dialogConfig.height = '500px';
 
-    dialogConfig.data = {
-      id: 1,
-      title: 'Hello there'
-    }
-
-    this.dialog.open(DialogBodyComponent, dialogConfig);
+    const dialogRef = this.dialog.open(DialogBodyComponent, dialogConfig);
   }
 
 }

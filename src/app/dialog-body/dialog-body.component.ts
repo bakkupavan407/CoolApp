@@ -15,4 +15,8 @@ import {
 })
 export class DialogBodyComponent {
     constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+
+    update() {
+        console.log("WoW...");
+    }
 }
