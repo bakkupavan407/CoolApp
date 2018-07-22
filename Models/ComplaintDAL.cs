@@ -43,7 +43,7 @@ namespace CoolApp.Models
       }
     }
 
-    public Complaint GetComplaintById(int id)
+    public Complaint GetComplaintById(Complaint getcomp)
     {
       try
       {
@@ -52,6 +52,8 @@ namespace CoolApp.Models
         {
             SqlCommand cmd = new SqlCommand("SP_GET_REQUEST_BY_ID", con);
             cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@cid", getcomp.id);
 
             if (cmd.Connection.State == ConnectionState.Closed)
             {
@@ -102,6 +104,10 @@ namespace CoolApp.Models
             complaint.mobile = Convert.ToInt64(rdr["MobileNo"]);
             complaint.reqsub = rdr["ReqSubject"].ToString();
             complaint.reqmessage = rdr["ReqMessage"].ToString();
+            complaint.reqstatus = rdr["ReqStatus"].ToString();
+            complaint.admincoms = rdr["AdminComms"].ToString();
+            complaint.date = rdr["DateCreated"].ToString();
+            complaint.updatedat = rdr["UpdateAt"].ToString();
             listRequests.Add(complaint);
           }
           con.Close();
@@ -111,6 +117,34 @@ namespace CoolApp.Models
       catch
       {
         throw;
+      }
+    }
+
+    public int UpdateComplaint(Complaint complaint)
+    {
+      try
+      {
+        using (SqlConnection con = new SqlConnection(connectionstr))
+        {
+          SqlCommand cmd = new SqlCommand("SP_UPDATE_REQUEST", con);
+          cmd.CommandType = CommandType.StoredProcedure;
+
+          cmd.Parameters.AddWithValue("@id", complaint.id);
+          cmd.Parameters.AddWithValue("@admincomms", complaint.admincoms);
+          // cmd.Parameters.AddWithValue("@reqstatus", complaint.reqstatus);
+
+          if (cmd.Connection.State == ConnectionState.Closed)
+          {
+            cmd.Connection.Open();
+          }
+          cmd.ExecuteNonQuery();
+          con.Close();
+        }
+        return 1;
+      }
+      catch
+      {
+        return 0;
       }
     }
   }

@@ -13,5 +13,9 @@ namespace CoolApp.Models
       public Int64 mobile { get; set; }
       public string reqsub { get; set; }
       public string reqmessage { get; set; }
+      public string reqstatus { get; set; }
+      public string date { get; set; }
+      public string admincoms { get; set; }
+      public string updatedat {get; set;}
     }
 }

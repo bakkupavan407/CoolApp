@@ -8,4 +8,5 @@ export interface Complaint {
     reqstatus: string;
     date: string;
     admincoms: string;
+    updatedat: string;
 }
