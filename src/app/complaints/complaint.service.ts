@@ -37,7 +37,8 @@ export class ComplaintService {
         return this.http.get('api/complaint/GetAllComplaints', httpOptions)
         .pipe(
             map((response:Response)=> {
-                return response.json();
+                console.log("$$$$$ ", response);
+                return response;
             }),
             catchError(this.handleError('getAllComplaints', ''))
         );
@@ -50,15 +51,25 @@ export class ComplaintService {
           );
       }
 
-    getComplaintById(cid: any) {
-        let myParams = new URLSearchParams();
-        myParams.append('id', cid);
-        
-        httpOptions['params'] = myParams;
-
-        return this.http.get('api/complaint/GetComplaintById', httpOptions)
+    getComplaintById(complaint: Complaint) {
+        return this.http.post<Complaint>('api/complaint/GetComplaintById', complaint, httpOptions)
         .pipe(
+            map((response:Response)=> {
+                console.log("$$$$$ ", response);
+                return response;
+            }),
             catchError(this.handleError('getComplaintById', ''))
+        );
+    }
+
+    updateComplaint(complaint: Complaint): Observable<Complaint> {
+        return this.http.post<Complaint>('api/complaint/UpdateComplaint', complaint, httpOptions)
+        .pipe(
+            map((response:Response)=> {
+                console.log("$$$$$ ", response);
+                return response;
+            }),
+            catchError(this.handleError('updateComplaint', ''))
         );
     }
 }

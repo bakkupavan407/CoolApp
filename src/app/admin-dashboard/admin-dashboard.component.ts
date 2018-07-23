@@ -9,6 +9,7 @@ import * as _ from "lodash";
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { DialogBodyComponent } from '../dialog-body/dialog-body.component';
 
+
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
@@ -27,10 +28,10 @@ export class AdminDashboardComponent implements OnInit {
     public router: Router) { }
 
   ngOnInit() {
-    //this.getComps();
+    this.getComps();
     const isLoggedIn = localStorage.getItem("admin");
 
-    if(!isLoggedIn) {
+    if (!isLoggedIn) {
       this.router.navigate(['/admin']);
     }
 
@@ -44,7 +45,8 @@ export class AdminDashboardComponent implements OnInit {
       "reqmessage": "Please take action as early as possible",
       "reqstatus": "completed",
       "date": "Thu Jul 19 2018",
-      "admincoms": "we have ordered concerned department and they have taken action."
+      "admincoms": "we have ordered concerned department and they have taken action.",
+      "updatedat": ""
     }, {
       "id": 2,
       "name": "Srikanth",
@@ -54,7 +56,8 @@ export class AdminDashboardComponent implements OnInit {
       "reqmessage": "Please take action as early as possible",
       "reqstatus": "InProgress",
       "date": "Thu Jul 19 2018",
-      "admincoms": null
+      "admincoms": null,
+      "updatedat": ""
     }, {
       "id": 3,
       "name": "venkatesh",
@@ -64,7 +67,8 @@ export class AdminDashboardComponent implements OnInit {
       "reqmessage": "Please take action as early as possible",
       "reqstatus": "completed",
       "date": "Thu Jul 19 2018",
-      "admincoms": null
+      "admincoms": null,
+      "updatedat": ""
     }, {
       "id": 4,
       "name": "Saambar",
@@ -74,7 +78,8 @@ export class AdminDashboardComponent implements OnInit {
       "reqmessage": "Please take action as early as possible",
       "reqstatus": "InProgress",
       "date": "Thu Jul 19 2018",
-      "admincoms": null
+      "admincoms": null,
+      "updatedat": ""
     }, {
       "id": 5,
       "name": "Shiva",
@@ -84,7 +89,8 @@ export class AdminDashboardComponent implements OnInit {
       "reqmessage": "Please take action as early as possible",
       "reqstatus": "InProgress",
       "date": "Thu Jul 19 2018",
-      "admincoms": null
+      "admincoms": null,
+      "updatedat": ""
     }, {
       "id": 6,
       "name": "Naresh",
@@ -94,14 +100,18 @@ export class AdminDashboardComponent implements OnInit {
       "reqmessage": "Please take action as early as possible",
       "reqstatus": "InProgress",
       "date": "Thu Jul 19 2018",
-      "admincoms": null
+      "admincoms": null,
+      "updatedat": ""
     }];
-    this.complaintsData = this.complaints;
+    // this.complaintsData = this.complaints;
   }
 
   getComps(): void {
     this.complaintService.getHeroes()
-      .subscribe(heroes => this.complaints = heroes);
+      .subscribe(complaints => {
+        console.log("&&&&&&& ", complaints);
+        this.complaintsData = complaints;
+      });
   }
 
   viewComplaints(type) {
@@ -125,6 +135,23 @@ export class AdminDashboardComponent implements OnInit {
     dialogConfig.height = '500px';
 
     const dialogRef = this.dialog.open(DialogBodyComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(
+      data => {
+        const ccupdatedata: Complaint = {
+          id: data.ccdata.id,
+          name: '',
+          email: '',
+          mobile: 0,
+          reqsub: '',
+          reqmessage: '',
+          reqstatus: "",
+          date: "",
+          admincoms: data.admincomments,
+          updatedat: ""
+        };
+        this.complaintService.updateComplaint(ccupdatedata).subscribe(hero => {});
+      });
   }
 
   logout(e): void {

@@ -15,7 +15,19 @@ export class ComplaintComponent implements OnInit {
     apiValues: string[] = [];
     
     ngOnInit() {
-        this.getComplaintById(7);
+        const comp: Complaint = {
+            id: 1,
+            name: '',
+            email: '',
+            mobile: 0,
+            reqsub: '',
+            reqmessage: '',
+            reqstatus: "",
+            date: "",
+            admincoms: null,
+            updatedat: ""
+        }
+        this.getComplaintById(comp);
         this.getAllComplaints();
         //this.saveComplaint();
     }
@@ -36,7 +48,8 @@ export class ComplaintComponent implements OnInit {
             reqmessage: reqmessage,
             reqstatus: "",
             date: "",
-            admincoms: null
+            admincoms: null,
+            updatedat: ""
         };
 
         this.complaintservice.addComplaint(comp)
@@ -52,8 +65,8 @@ export class ComplaintComponent implements OnInit {
             });
     }
 
-    getComplaintById(cid: any) {
-        this.complaintservice.getComplaintById(cid)
+    getComplaintById(complaint: Complaint) {
+        this.complaintservice.getComplaintById(complaint)
             .subscribe(complaint => {
                 console.log(`complaint by id: ${complaint}`);
             });

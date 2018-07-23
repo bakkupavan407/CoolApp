@@ -27,10 +27,10 @@ namespace CoolApp.Controllers
     }
 
     // GET api/<controller>/5
-    [HttpGet("{id:int}")]
-    public Complaint GetComplaintById(int id)
+    [HttpPost]
+    public Complaint GetComplaintById([FromBody] Complaint complaint)
     {
-      return complaintDAL.GetComplaintById(id);
+      return complaintDAL.GetComplaintById(complaint);
     }
 
     // POST api/<controller>
@@ -42,9 +42,10 @@ namespace CoolApp.Controllers
     }
 
     // PUT api/<controller>/5
-    [HttpPut("{id}")]
-    public void Put(int id, [FromBody]string value)
+    [HttpPost]
+    public int UpdateComplaint([FromBody] Complaint data)
     {
+      return complaintDAL.UpdateComplaint(data);
     }
 
     // DELETE api/<controller>/5
