@@ -21,6 +21,9 @@ export class AdminDashboardComponent implements OnInit {
   complaintsData: Complaint[];
   manageComplaints: Complaint;
   currentDate: string;
+  totalComplaints: number;
+  inProgressComplaints: number;
+  completedComplaints: number;
 
   constructor(private breakpointObserver: BreakpointObserver,
     private complaintService: ComplaintService,
@@ -34,76 +37,6 @@ export class AdminDashboardComponent implements OnInit {
     if (!isLoggedIn) {
       this.router.navigate(['/admin']);
     }
-
-    this.currentDate = new Date().toDateString();
-    this.complaints = [{
-      "id": 1,
-      "name": "pavan",
-      "email": "pk@gmail.com",
-      "mobile": 7777777777,
-      "reqsub": "No Footpaths",
-      "reqmessage": "Please take action as early as possible",
-      "reqstatus": "completed",
-      "date": "Thu Jul 19 2018",
-      "admincoms": "we have ordered concerned department and they have taken action.",
-      "updatedat": ""
-    }, {
-      "id": 2,
-      "name": "Srikanth",
-      "email": "megastar@gmail.com",
-      "mobile": 4444444444,
-      "reqsub": "Tea point is not available",
-      "reqmessage": "Please take action as early as possible",
-      "reqstatus": "InProgress",
-      "date": "Thu Jul 19 2018",
-      "admincoms": null,
-      "updatedat": ""
-    }, {
-      "id": 3,
-      "name": "venkatesh",
-      "email": "venki@gmail.com",
-      "mobile": 6666666666,
-      "reqsub": "Park is not clean",
-      "reqmessage": "Please take action as early as possible",
-      "reqstatus": "completed",
-      "date": "Thu Jul 19 2018",
-      "admincoms": null,
-      "updatedat": ""
-    }, {
-      "id": 4,
-      "name": "Saambar",
-      "email": "saambar@gmail.com",
-      "mobile": 5555555555,
-      "reqsub": "Share autos not available",
-      "reqmessage": "Please take action as early as possible",
-      "reqstatus": "InProgress",
-      "date": "Thu Jul 19 2018",
-      "admincoms": null,
-      "updatedat": ""
-    }, {
-      "id": 5,
-      "name": "Shiva",
-      "email": "shiva@gmail.com",
-      "mobile": 333333333,
-      "reqsub": "No marriage",
-      "reqmessage": "Please take action as early as possible",
-      "reqstatus": "InProgress",
-      "date": "Thu Jul 19 2018",
-      "admincoms": null,
-      "updatedat": ""
-    }, {
-      "id": 6,
-      "name": "Naresh",
-      "email": "naresh@gmail.com",
-      "mobile": 222222222,
-      "reqsub": "Requesting more girls in team",
-      "reqmessage": "Please take action as early as possible",
-      "reqstatus": "InProgress",
-      "date": "Thu Jul 19 2018",
-      "admincoms": null,
-      "updatedat": ""
-    }];
-    // this.complaintsData = this.complaints;
   }
 
   getComps(): void {
@@ -111,15 +44,22 @@ export class AdminDashboardComponent implements OnInit {
       .subscribe(complaints => {
         console.log("&&&&&&& ", complaints);
         this.complaintsData = complaints;
+        this.complaints = complaints;
+
+        this.totalComplaints = complaints.length;
+        this.completedComplaints = _.values(_.filter(this.complaints, { "reqstatus": "completed" })).length;
+        this.inProgressComplaints = _.values(_.filter(this.complaints, { "reqstatus": "InPending" })).length;
       });
   }
 
   viewComplaints(type) {
     if (!this.complaints.length) return;
-    if (type == "all") {
+    if (type === "all") {
       this.complaintsData = this.complaints;
+    } else if (type === "completed") {
+      this.complaintsData = _.values(_.filter(this.complaints, { "reqstatus": "completed" }));
     } else {
-      this.complaintsData = _.values(_.filter(this.complaints, { "reqstatus": type }));
+      this.complaintsData = _.values(_.filter(this.complaints, { "reqstatus": "InPending" }));
     }
   }
 
@@ -150,7 +90,7 @@ export class AdminDashboardComponent implements OnInit {
           admincoms: data.admincomments,
           updatedat: ""
         };
-        this.complaintService.updateComplaint(ccupdatedata).subscribe(hero => {});
+        this.complaintService.updateComplaint(ccupdatedata).subscribe(hero => { });
       });
   }
 

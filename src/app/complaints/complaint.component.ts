@@ -1,17 +1,32 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { FormBuilder, Validators, FormGroup, FormControl } from "@angular/forms";
 import { Http } from '@angular/http';
 
 import { Complaint } from './complaint';
 import { ComplaintService } from './complaint.service';
 
+import { MatCardModule } from '@angular/material';
+
 @Component({
     selector: 'app-root',
     providers: [ ComplaintService ],
-    templateUrl: './complaint.component.html'
+    templateUrl: './complaint.component.html',
+    styleUrls: ['./complaint.component.css']
 })
 export class ComplaintComponent implements OnInit {
-    public allcomplaints: Complaint[];  
-    constructor(private _httpService: Http, private complaintservice: ComplaintService) { }
+    isReqSaved: boolean = false;
+    isReqFailed: boolean = false;
+    form: FormGroup;
+    public allcomplaints: Complaint[];
+    constructor(private _httpService: Http, private complaintservice: ComplaintService) {
+        this.form = new FormGroup({
+            username: new FormControl("", Validators.required),
+            usermobile: new FormControl("", Validators.required),
+            useremail: new FormControl("", Validators.required),
+            reqtitle: new FormControl("", Validators.required),
+            reqmessage: new FormControl("", Validators.required)
+        });
+    }
     apiValues: string[] = [];
     
     ngOnInit() {
@@ -33,11 +48,13 @@ export class ComplaintComponent implements OnInit {
     }
 
     saveComplaint(): void {
-        const name = "rakesh";
-        const email = "rakesh@gmail.com";
-        const mobile = 7382476952;
-        const reqsub = "No Foot Paths";
-        const reqmessage = "Please solve foot paths problems as early as possible";
+        console.log("$$$$", this.form.value);
+
+        const name = this.form.value.username;
+        const email = this.form.value.useremail;
+        const mobile = this.form.value.usermobile;
+        const reqsub = this.form.value.reqtitle;
+        const reqmessage = this.form.value.reqmessage;
 
         const comp: Complaint = {
             id: 0,
@@ -52,9 +69,16 @@ export class ComplaintComponent implements OnInit {
             updatedat: ""
         };
 
+        console.log("heelo there ", comp);
+
         this.complaintservice.addComplaint(comp)
-            .subscribe(hero => {
-                console.log(hero);
+            .subscribe(result => {
+                console.log(result);
+                if(result === 1) {
+                    this.isReqSaved = true;
+                } else {
+                    this.isReqFailed = false;
+                }
             });
     }
 
@@ -70,5 +94,10 @@ export class ComplaintComponent implements OnInit {
             .subscribe(complaint => {
                 console.log(`complaint by id: ${complaint}`);
             });
+    }
+
+    complaintFormCancel(e) {
+        if(e) e.preventDefault();
+        this.form.reset();
     }
 }
