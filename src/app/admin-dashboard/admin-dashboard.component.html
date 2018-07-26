@@ -131,7 +131,7 @@
                   <i class="material-icons">store</i>
                 </div>
                 <p class="card-category">Total Complaints</p>
-                <h3 class="card-title">150</h3>
+                <h3 class="card-title">{{totalComplaints}}</h3>
               </div>
               <div class="card-footer">
                 <div class="stats" (click)="viewComplaints('all')">
@@ -147,10 +147,10 @@
                   <i class="material-icons">info_outline</i>
                 </div>
                 <p class="card-category">Inprogress</p>
-                <h3 class="card-title">75</h3>
+                <h3 class="card-title">{{inProgressComplaints}}</h3>
               </div>
               <div class="card-footer">
-                <div class="stats" (click)="viewComplaints('InProgress')">
+                <div class="stats" (click)="viewComplaints('InPending')">
                   <i class="material-icons">local_offer</i> Click to view In Progress
                 </div>
               </div>
@@ -163,7 +163,7 @@
                   <i class="material-icons">thumb_up</i>
                 </div>
                 <p class="card-category">Completed</p>
-                <h3 class="card-title">75</h3>
+                <h3 class="card-title">{{completedComplaints}}</h3>
               </div>
               <div class="card-footer">
                 <div class="stats" (click)="viewComplaints('completed')">
@@ -206,9 +206,9 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let complaint of complaintsData">
+                      <tr *ngFor="let complaint of complaintsData;  let i = index" [attr.data-index]="i">
                         <td>
-                          {{complaint.id}}
+                          {{i + 1}}
                         </td>
                         <td>
                           {{complaint.name}}
@@ -223,18 +223,18 @@
                           {{complaint.reqmessage}}
                         </td>
                         <td>
-                          <button type="button" class="btn btn-primary" 
-                          [style.display]="complaint.reqstatus == 'completed' ? 'none' : ''" 
+                          <button type="button" class="btn btn-primary"
+                          [hidden]="complaint.reqstatus === 'completed'" 
                           (click)="editComplaints(complaint)">Edit</button>
                           <button type="button" class="btn btn-primary" 
-                          [style.display]="complaint.reqstatus == 'InPending' ? 'none' : ''" 
+                          [hidden]="complaint.reqstatus === 'InPending'"
                           (click)="viewComplaint(complaint)">View</button>
                         </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
-                <div *ngIf="!complaintsData.length" class="no-data">No data to display</div>
+                <!-- <div *ngIf="!complaintsData.length" class="no-data">No data to display</div> -->
               </div>
             </div>
           </div>

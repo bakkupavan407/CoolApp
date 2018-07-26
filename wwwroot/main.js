@@ -41,7 +41,7 @@ module.exports = ".main-panel {\r\n    margin-right: -2px;\r\n}\r\n\r\n.navbar {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper \">\r\n  <div class=\"sidebar\" data-color=\"purple\" data-background-color=\"white\" data-image=\"../assets/img/sidebar-1.jpg\">\r\n    <!--\r\n            Tip 1: You can change the color of the sidebar using: data-color=\"purple | azure | green | orange | danger\"\r\n    \r\n            Tip 2: you can also add an image using data-image tag\r\n        -->\r\n    <div class=\"logo\">\r\n      <a href=\"http://www.gampagoverdhan.com\" class=\"simple-text logo-normal\">\r\n        Gampa Goverdhansss\r\n      </a>\r\n    </div>\r\n    <div class=\"sidebar-wrapper\">\r\n      <ul class=\"nav\">\r\n        <li class=\"nav-item active  \">\r\n          <a class=\"nav-link\" href=\"/dashboard\">\r\n            <i class=\"material-icons\">dashboard</i>\r\n            <p>Dashboard</p>\r\n          </a>\r\n        </li>\r\n        <!-- <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"./user.html\">\r\n            <i class=\"material-icons\">person</i>\r\n            <p>User Profile</p>\r\n          </a>\r\n        </li>\r\n        <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"./tables.html\">\r\n            <i class=\"material-icons\">content_paste</i>\r\n            <p>Table List</p>\r\n          </a>\r\n        </li>\r\n        <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"./typography.html\">\r\n            <i class=\"material-icons\">library_books</i>\r\n            <p>Typography</p>\r\n          </a>\r\n        </li>\r\n        <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"./icons.html\">\r\n            <i class=\"material-icons\">bubble_chart</i>\r\n            <p>Icons</p>\r\n          </a>\r\n        </li>\r\n        <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"./map.html\">\r\n            <i class=\"material-icons\">location_ons</i>\r\n            <p>Maps</p>\r\n          </a>\r\n        </li>\r\n        <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"./notifications.html\">\r\n            <i class=\"material-icons\">notifications</i>\r\n            <p>Notifications</p>\r\n          </a>\r\n        </li> -->\r\n        <!-- <li class=\"nav-item active-pro \">\r\n                    <a class=\"nav-link\" href=\"./upgrade.html\">\r\n                        <i class=\"material-icons\">unarchive</i>\r\n                        <p>Upgrade to PRO</p>\r\n                    </a>\r\n                </li> -->\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <div class=\"main-panel\">\r\n    <!-- Navbar -->\r\n    <nav class=\"navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top \">\r\n      <div class=\"container-fluid\">\r\n        <div class=\"navbar-wrapper\">\r\n          <a class=\"navbar-brand\" href=\"#pablo\">Dashboard</a>\r\n        </div>\r\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" aria-controls=\"navigation-index\" aria-expanded=\"false\"\r\n          aria-label=\"Toggle navigation\">\r\n          <span class=\"sr-only\">Toggle navigation</span>\r\n          <span class=\"navbar-toggler-icon icon-bar\"></span>\r\n          <span class=\"navbar-toggler-icon icon-bar\"></span>\r\n          <span class=\"navbar-toggler-icon icon-bar\"></span>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse justify-content-end\">\r\n          <!-- <form class=\"navbar-form\">\r\n            <div class=\"input-group no-border\">\r\n              <input type=\"text\" value=\"\" class=\"form-control\" placeholder=\"Search...\">\r\n              <button type=\"submit\" class=\"btn btn-white btn-round btn-just-icon\">\r\n                <i class=\"material-icons\">search</i>\r\n                <div class=\"ripple-container\"></div>\r\n              </button>\r\n            </div>\r\n          </form> -->\r\n          <ul class=\"navbar-nav\">\r\n            <!-- <li class=\"nav-item\">\r\n              <a class=\"nav-link\" href=\"#pablo\">\r\n                <i class=\"material-icons\">dashboard</i>\r\n                <p class=\"d-lg-none d-md-block\">\r\n                  Stats\r\n                </p>\r\n              </a>\r\n            </li>\r\n            <li class=\"nav-item dropdown\">\r\n              <a class=\"nav-link\" href=\"http://example.com\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                <i class=\"material-icons\">notifications</i>\r\n                <span class=\"notification\">5</span>\r\n                <p class=\"d-lg-none d-md-block\">\r\n                  Some Actions\r\n                </p>\r\n              </a>\r\n              <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownMenuLink\">\r\n                <a class=\"dropdown-item\" href=\"#\">Mike John responded to your email</a>\r\n                <a class=\"dropdown-item\" href=\"#\">You have 5 new tasks</a>\r\n                <a class=\"dropdown-item\" href=\"#\">You're now friend with Andrew</a>\r\n                <a class=\"dropdown-item\" href=\"#\">Another Notification</a>\r\n                <a class=\"dropdown-item\" href=\"#\">Another One</a>\r\n              </div>\r\n            </li> -->\r\n            <li class=\"nav-item\">\r\n              <i class=\"material-icons\">person</i>\r\n              <span (click)=\"logout($event)\">Logout</span>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </nav>\r\n    <!-- End Navbar -->\r\n    <div class=\"content\">\r\n      <div class=\"container-fluid\">\r\n        <div class=\"row\">\r\n          <div class=\"col-lg-4 col-md-6 col-sm-6\">\r\n            <div class=\"card card-stats\">\r\n              <div class=\"card-header card-header-success card-header-icon\">\r\n                <div class=\"card-icon\">\r\n                  <i class=\"material-icons\">store</i>\r\n                </div>\r\n                <p class=\"card-category\">Total Complaints</p>\r\n                <h3 class=\"card-title\">150</h3>\r\n              </div>\r\n              <div class=\"card-footer\">\r\n                <div class=\"stats\" (click)=\"viewComplaints('all')\">\r\n                  <i class=\"material-icons\">date_range</i> Click to view All\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-lg-4 col-md-6 col-sm-6\">\r\n            <div class=\"card card-stats\">\r\n              <div class=\"card-header card-header-danger card-header-icon\">\r\n                <div class=\"card-icon\">\r\n                  <i class=\"material-icons\">info_outline</i>\r\n                </div>\r\n                <p class=\"card-category\">Inprogress</p>\r\n                <h3 class=\"card-title\">75</h3>\r\n              </div>\r\n              <div class=\"card-footer\">\r\n                <div class=\"stats\" (click)=\"viewComplaints('InProgress')\">\r\n                  <i class=\"material-icons\">local_offer</i> Click to view In Progress\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-lg-4 col-md-6 col-sm-6\">\r\n            <div class=\"card card-stats\">\r\n              <div class=\"card-header card-header-info card-header-icon\">\r\n                <div class=\"card-icon\">\r\n                  <i class=\"material-icons\">thumb_up</i>\r\n                </div>\r\n                <p class=\"card-category\">Completed</p>\r\n                <h3 class=\"card-title\">75</h3>\r\n              </div>\r\n              <div class=\"card-footer\">\r\n                <div class=\"stats\" (click)=\"viewComplaints('completed')\">\r\n                  <i class=\"material-icons\">update</i> Click to view completed\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12\">\r\n            <div class=\"card\">\r\n              <div class=\"card-header card-header-primary\">\r\n                <h4 class=\"card-title \">All Complaints</h4>\r\n                <p class=\"card-category\"> Clicking on each section will display below</p>\r\n              </div>\r\n              <div class=\"card-body\">\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead class=\" text-primary\">\r\n                      <tr>\r\n                        <th>\r\n                          ID\r\n                        </th>\r\n                        <th>\r\n                          Name\r\n                        </th>\r\n                        <th>\r\n                          Mobile\r\n                        </th>\r\n                        <th>\r\n                          Req Subject\r\n                        </th>\r\n                        <th>\r\n                          Message\r\n                        </th>\r\n                        <th>\r\n                          Action\r\n                        </th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                      <tr *ngFor=\"let complaint of complaintsData\">\r\n                        <td>\r\n                          {{complaint.id}}\r\n                        </td>\r\n                        <td>\r\n                          {{complaint.name}}\r\n                        </td>\r\n                        <td>\r\n                          {{complaint.mobile}}\r\n                        </td>\r\n                        <td>\r\n                          {{complaint.reqsub}}\r\n                        </td>\r\n                        <td>\r\n                          {{complaint.reqmessage}}\r\n                        </td>\r\n                        <td>\r\n                          <button type=\"button\" class=\"btn btn-primary\" \r\n                          [style.display]=\"complaint.reqstatus == 'completed' ? 'none' : ''\" \r\n                          (click)=\"editComplaints(complaint)\">Edit</button>\r\n                          <button type=\"button\" class=\"btn btn-primary\" \r\n                          [style.display]=\"complaint.reqstatus == 'InPending' ? 'none' : ''\" \r\n                          (click)=\"viewComplaint(complaint)\">View</button>\r\n                        </td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n                <div *ngIf=\"!complaintsData.length\" class=\"no-data\">No data to display</div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <!-- \r\n        <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n          <div class=\"modal-dialog\" role=\"document\">\r\n            <div class=\"modal-content\">\r\n              <div class=\"modal-header\">\r\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                  <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n              </div>\r\n              <div class=\"modal-body\">\r\n                <div class=\"form-group\">\r\n                  <label for=\"comment\">Admin Comment:</label>\r\n                  <textarea class=\"form-control\" rows=\"5\" id=\"comment\"></textarea>\r\n                </div>\r\n                <div>\r\n                  <p class=\"complaints-date\">Updated Date: {{currentDate}}</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\r\n                <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div> -->\r\n\r\n\r\n\r\n      </div>\r\n    </div>\r\n    <footer class=\"footer\">\r\n      <div class=\"container-fluid\">\r\n        <div class=\"copyright float-right\">\r\n          &copy;\r\n          <script>\r\n            document.write(new Date().getFullYear())\r\n          </script>, made with\r\n          <i class=\"material-icons\">favorite</i> by\r\n          <a href=\"https://www.anehtech.com\" target=\"_blank\">Aneh Technologies</a> for a better web.\r\n        </div>\r\n      </div>\r\n    </footer>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"wrapper \">\r\n  <div class=\"sidebar\" data-color=\"purple\" data-background-color=\"white\" data-image=\"../assets/img/sidebar-1.jpg\">\r\n    <!--\r\n            Tip 1: You can change the color of the sidebar using: data-color=\"purple | azure | green | orange | danger\"\r\n    \r\n            Tip 2: you can also add an image using data-image tag\r\n        -->\r\n    <div class=\"logo\">\r\n      <a href=\"http://www.gampagoverdhan.com\" class=\"simple-text logo-normal\">\r\n        Gampa Goverdhansss\r\n      </a>\r\n    </div>\r\n    <div class=\"sidebar-wrapper\">\r\n      <ul class=\"nav\">\r\n        <li class=\"nav-item active  \">\r\n          <a class=\"nav-link\" href=\"/dashboard\">\r\n            <i class=\"material-icons\">dashboard</i>\r\n            <p>Dashboard</p>\r\n          </a>\r\n        </li>\r\n        <!-- <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"./user.html\">\r\n            <i class=\"material-icons\">person</i>\r\n            <p>User Profile</p>\r\n          </a>\r\n        </li>\r\n        <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"./tables.html\">\r\n            <i class=\"material-icons\">content_paste</i>\r\n            <p>Table List</p>\r\n          </a>\r\n        </li>\r\n        <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"./typography.html\">\r\n            <i class=\"material-icons\">library_books</i>\r\n            <p>Typography</p>\r\n          </a>\r\n        </li>\r\n        <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"./icons.html\">\r\n            <i class=\"material-icons\">bubble_chart</i>\r\n            <p>Icons</p>\r\n          </a>\r\n        </li>\r\n        <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"./map.html\">\r\n            <i class=\"material-icons\">location_ons</i>\r\n            <p>Maps</p>\r\n          </a>\r\n        </li>\r\n        <li class=\"nav-item \">\r\n          <a class=\"nav-link\" href=\"./notifications.html\">\r\n            <i class=\"material-icons\">notifications</i>\r\n            <p>Notifications</p>\r\n          </a>\r\n        </li> -->\r\n        <!-- <li class=\"nav-item active-pro \">\r\n                    <a class=\"nav-link\" href=\"./upgrade.html\">\r\n                        <i class=\"material-icons\">unarchive</i>\r\n                        <p>Upgrade to PRO</p>\r\n                    </a>\r\n                </li> -->\r\n      </ul>\r\n    </div>\r\n  </div>\r\n  <div class=\"main-panel\">\r\n    <!-- Navbar -->\r\n    <nav class=\"navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top \">\r\n      <div class=\"container-fluid\">\r\n        <div class=\"navbar-wrapper\">\r\n          <a class=\"navbar-brand\" href=\"#pablo\">Dashboard</a>\r\n        </div>\r\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" aria-controls=\"navigation-index\" aria-expanded=\"false\"\r\n          aria-label=\"Toggle navigation\">\r\n          <span class=\"sr-only\">Toggle navigation</span>\r\n          <span class=\"navbar-toggler-icon icon-bar\"></span>\r\n          <span class=\"navbar-toggler-icon icon-bar\"></span>\r\n          <span class=\"navbar-toggler-icon icon-bar\"></span>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse justify-content-end\">\r\n          <!-- <form class=\"navbar-form\">\r\n            <div class=\"input-group no-border\">\r\n              <input type=\"text\" value=\"\" class=\"form-control\" placeholder=\"Search...\">\r\n              <button type=\"submit\" class=\"btn btn-white btn-round btn-just-icon\">\r\n                <i class=\"material-icons\">search</i>\r\n                <div class=\"ripple-container\"></div>\r\n              </button>\r\n            </div>\r\n          </form> -->\r\n          <ul class=\"navbar-nav\">\r\n            <!-- <li class=\"nav-item\">\r\n              <a class=\"nav-link\" href=\"#pablo\">\r\n                <i class=\"material-icons\">dashboard</i>\r\n                <p class=\"d-lg-none d-md-block\">\r\n                  Stats\r\n                </p>\r\n              </a>\r\n            </li>\r\n            <li class=\"nav-item dropdown\">\r\n              <a class=\"nav-link\" href=\"http://example.com\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                <i class=\"material-icons\">notifications</i>\r\n                <span class=\"notification\">5</span>\r\n                <p class=\"d-lg-none d-md-block\">\r\n                  Some Actions\r\n                </p>\r\n              </a>\r\n              <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownMenuLink\">\r\n                <a class=\"dropdown-item\" href=\"#\">Mike John responded to your email</a>\r\n                <a class=\"dropdown-item\" href=\"#\">You have 5 new tasks</a>\r\n                <a class=\"dropdown-item\" href=\"#\">You're now friend with Andrew</a>\r\n                <a class=\"dropdown-item\" href=\"#\">Another Notification</a>\r\n                <a class=\"dropdown-item\" href=\"#\">Another One</a>\r\n              </div>\r\n            </li> -->\r\n            <li class=\"nav-item\">\r\n              <i class=\"material-icons\">person</i>\r\n              <span (click)=\"logout($event)\">Logout</span>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </nav>\r\n    <!-- End Navbar -->\r\n    <div class=\"content\">\r\n      <div class=\"container-fluid\">\r\n        <div class=\"row\">\r\n          <div class=\"col-lg-4 col-md-6 col-sm-6\">\r\n            <div class=\"card card-stats\">\r\n              <div class=\"card-header card-header-success card-header-icon\">\r\n                <div class=\"card-icon\">\r\n                  <i class=\"material-icons\">store</i>\r\n                </div>\r\n                <p class=\"card-category\">Total Complaints</p>\r\n                <h3 class=\"card-title\">{{totalComplaints}}</h3>\r\n              </div>\r\n              <div class=\"card-footer\">\r\n                <div class=\"stats\" (click)=\"viewComplaints('all')\">\r\n                  <i class=\"material-icons\">date_range</i> Click to view All\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-lg-4 col-md-6 col-sm-6\">\r\n            <div class=\"card card-stats\">\r\n              <div class=\"card-header card-header-danger card-header-icon\">\r\n                <div class=\"card-icon\">\r\n                  <i class=\"material-icons\">info_outline</i>\r\n                </div>\r\n                <p class=\"card-category\">Inprogress</p>\r\n                <h3 class=\"card-title\">{{inProgressComplaints}}</h3>\r\n              </div>\r\n              <div class=\"card-footer\">\r\n                <div class=\"stats\" (click)=\"viewComplaints('InPending')\">\r\n                  <i class=\"material-icons\">local_offer</i> Click to view In Progress\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col-lg-4 col-md-6 col-sm-6\">\r\n            <div class=\"card card-stats\">\r\n              <div class=\"card-header card-header-info card-header-icon\">\r\n                <div class=\"card-icon\">\r\n                  <i class=\"material-icons\">thumb_up</i>\r\n                </div>\r\n                <p class=\"card-category\">Completed</p>\r\n                <h3 class=\"card-title\">{{completedComplaints}}</h3>\r\n              </div>\r\n              <div class=\"card-footer\">\r\n                <div class=\"stats\" (click)=\"viewComplaints('completed')\">\r\n                  <i class=\"material-icons\">update</i> Click to view completed\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"col-md-12\">\r\n            <div class=\"card\">\r\n              <div class=\"card-header card-header-primary\">\r\n                <h4 class=\"card-title \">All Complaints</h4>\r\n                <p class=\"card-category\"> Clicking on each section will display below</p>\r\n              </div>\r\n              <div class=\"card-body\">\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead class=\" text-primary\">\r\n                      <tr>\r\n                        <th>\r\n                          ID\r\n                        </th>\r\n                        <th>\r\n                          Name\r\n                        </th>\r\n                        <th>\r\n                          Mobile\r\n                        </th>\r\n                        <th>\r\n                          Req Subject\r\n                        </th>\r\n                        <th>\r\n                          Message\r\n                        </th>\r\n                        <th>\r\n                          Action\r\n                        </th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                      <tr *ngFor=\"let complaint of complaintsData;  let i = index\" [attr.data-index]=\"i\">\r\n                        <td>\r\n                          {{i + 1}}\r\n                        </td>\r\n                        <td>\r\n                          {{complaint.name}}\r\n                        </td>\r\n                        <td>\r\n                          {{complaint.mobile}}\r\n                        </td>\r\n                        <td>\r\n                          {{complaint.reqsub}}\r\n                        </td>\r\n                        <td>\r\n                          {{complaint.reqmessage}}\r\n                        </td>\r\n                        <td>\r\n                          <button type=\"button\" class=\"btn btn-primary\"\r\n                          [hidden]=\"complaint.reqstatus === 'completed'\" \r\n                          (click)=\"editComplaints(complaint)\">Edit</button>\r\n                          <button type=\"button\" class=\"btn btn-primary\" \r\n                          [hidden]=\"complaint.reqstatus === 'InPending'\"\r\n                          (click)=\"viewComplaint(complaint)\">View</button>\r\n                        </td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n                <!-- <div *ngIf=\"!complaintsData.length\" class=\"no-data\">No data to display</div> -->\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <!-- \r\n        <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n          <div class=\"modal-dialog\" role=\"document\">\r\n            <div class=\"modal-content\">\r\n              <div class=\"modal-header\">\r\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n                  <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n              </div>\r\n              <div class=\"modal-body\">\r\n                <div class=\"form-group\">\r\n                  <label for=\"comment\">Admin Comment:</label>\r\n                  <textarea class=\"form-control\" rows=\"5\" id=\"comment\"></textarea>\r\n                </div>\r\n                <div>\r\n                  <p class=\"complaints-date\">Updated Date: {{currentDate}}</p>\r\n                </div>\r\n              </div>\r\n              <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\r\n                <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div> -->\r\n\r\n\r\n\r\n      </div>\r\n    </div>\r\n    <footer class=\"footer\">\r\n      <div class=\"container-fluid\">\r\n        <div class=\"copyright float-right\">\r\n          &copy;\r\n          <script>\r\n            document.write(new Date().getFullYear())\r\n          </script>, made with\r\n          <i class=\"material-icons\">favorite</i> by\r\n          <a href=\"https://www.anehtech.com\" target=\"_blank\">Aneh Technologies</a> for a better web.\r\n        </div>\r\n      </div>\r\n    </footer>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -92,75 +92,6 @@ var AdminDashboardComponent = /** @class */ (function () {
         if (!isLoggedIn) {
             this.router.navigate(['/admin']);
         }
-        this.currentDate = new Date().toDateString();
-        this.complaints = [{
-                "id": 1,
-                "name": "pavan",
-                "email": "pk@gmail.com",
-                "mobile": 7777777777,
-                "reqsub": "No Footpaths",
-                "reqmessage": "Please take action as early as possible",
-                "reqstatus": "completed",
-                "date": "Thu Jul 19 2018",
-                "admincoms": "we have ordered concerned department and they have taken action.",
-                "updatedat": ""
-            }, {
-                "id": 2,
-                "name": "Srikanth",
-                "email": "megastar@gmail.com",
-                "mobile": 4444444444,
-                "reqsub": "Tea point is not available",
-                "reqmessage": "Please take action as early as possible",
-                "reqstatus": "InProgress",
-                "date": "Thu Jul 19 2018",
-                "admincoms": null,
-                "updatedat": ""
-            }, {
-                "id": 3,
-                "name": "venkatesh",
-                "email": "venki@gmail.com",
-                "mobile": 6666666666,
-                "reqsub": "Park is not clean",
-                "reqmessage": "Please take action as early as possible",
-                "reqstatus": "completed",
-                "date": "Thu Jul 19 2018",
-                "admincoms": null,
-                "updatedat": ""
-            }, {
-                "id": 4,
-                "name": "Saambar",
-                "email": "saambar@gmail.com",
-                "mobile": 5555555555,
-                "reqsub": "Share autos not available",
-                "reqmessage": "Please take action as early as possible",
-                "reqstatus": "InProgress",
-                "date": "Thu Jul 19 2018",
-                "admincoms": null,
-                "updatedat": ""
-            }, {
-                "id": 5,
-                "name": "Shiva",
-                "email": "shiva@gmail.com",
-                "mobile": 333333333,
-                "reqsub": "No marriage",
-                "reqmessage": "Please take action as early as possible",
-                "reqstatus": "InProgress",
-                "date": "Thu Jul 19 2018",
-                "admincoms": null,
-                "updatedat": ""
-            }, {
-                "id": 6,
-                "name": "Naresh",
-                "email": "naresh@gmail.com",
-                "mobile": 222222222,
-                "reqsub": "Requesting more girls in team",
-                "reqmessage": "Please take action as early as possible",
-                "reqstatus": "InProgress",
-                "date": "Thu Jul 19 2018",
-                "admincoms": null,
-                "updatedat": ""
-            }];
-        // this.complaintsData = this.complaints;
     };
     AdminDashboardComponent.prototype.getComps = function () {
         var _this = this;
@@ -168,16 +99,23 @@ var AdminDashboardComponent = /** @class */ (function () {
             .subscribe(function (complaints) {
             console.log("&&&&&&& ", complaints);
             _this.complaintsData = complaints;
+            _this.complaints = complaints;
+            _this.totalComplaints = complaints.length;
+            _this.completedComplaints = lodash__WEBPACK_IMPORTED_MODULE_4__["values"](lodash__WEBPACK_IMPORTED_MODULE_4__["filter"](_this.complaints, { "reqstatus": "completed" })).length;
+            _this.inProgressComplaints = lodash__WEBPACK_IMPORTED_MODULE_4__["values"](lodash__WEBPACK_IMPORTED_MODULE_4__["filter"](_this.complaints, { "reqstatus": "InPending" })).length;
         });
     };
     AdminDashboardComponent.prototype.viewComplaints = function (type) {
         if (!this.complaints.length)
             return;
-        if (type == "all") {
+        if (type === "all") {
             this.complaintsData = this.complaints;
         }
+        else if (type === "completed") {
+            this.complaintsData = lodash__WEBPACK_IMPORTED_MODULE_4__["values"](lodash__WEBPACK_IMPORTED_MODULE_4__["filter"](this.complaints, { "reqstatus": "completed" }));
+        }
         else {
-            this.complaintsData = lodash__WEBPACK_IMPORTED_MODULE_4__["values"](lodash__WEBPACK_IMPORTED_MODULE_4__["filter"](this.complaints, { "reqstatus": type }));
+            this.complaintsData = lodash__WEBPACK_IMPORTED_MODULE_4__["values"](lodash__WEBPACK_IMPORTED_MODULE_4__["filter"](this.complaints, { "reqstatus": "InPending" }));
         }
     };
     AdminDashboardComponent.prototype.editComplaints = function (selectedComplaint) {
@@ -490,6 +428,17 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/complaints/complaint.component.css":
+/*!****************************************************!*\
+  !*** ./src/app/complaints/complaint.component.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#complaintForm input {\r\n    width: 100%;\r\n}"
+
+/***/ }),
+
 /***/ "./src/app/complaints/complaint.component.html":
 /*!*****************************************************!*\
   !*** ./src/app/complaints/complaint.component.html ***!
@@ -497,7 +446,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>this is complaint html</h1>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n    <a class=\"navbar-brand\" href=\"#\">Navbar</a>\r\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\"\r\n        aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n\r\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n        <ul class=\"navbar-nav mr-auto\">\r\n            <li class=\"nav-item active\">\r\n                <a class=\"nav-link\" href=\"/\">Home\r\n                    <span class=\"sr-only\">(current)</span>\r\n                </a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" href=\"/complaints\">Complaints</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" href=\"/dashboard\">Dashboard</a>\r\n            </li>\r\n            <li class=\"nav-item dropdown\">\r\n                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\r\n                    aria-expanded=\"false\">\r\n                    Dropdown\r\n                </a>\r\n                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n                    <a class=\"dropdown-item\" href=\"#\">Action</a>\r\n                    <a class=\"dropdown-item\" href=\"#\">Another action</a>\r\n                    <div class=\"dropdown-divider\"></div>\r\n                    <a class=\"dropdown-item\" href=\"#\">Something else here</a>\r\n                </div>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\r\n            </li>\r\n        </ul>\r\n        <form class=\"form-inline my-2 my-lg-0\">\r\n            <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\r\n            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\r\n        </form>\r\n    </div>\r\n</nav>\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-lg-12 col-md-6 col-sm-6\">\r\n            <div class=\"row\" id=\"complaintForm\">\r\n                <!-- style=\"border: 5px solid green; padding: 10px;\" -->\r\n                <div class=\"col-lg-8 offset-lg-2\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-lg-12 col-md-6 col-sm-6\">\r\n                            <h3>Raise a Request</h3>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-lg-12 col-md-6 col-sm-6\" *ngIf=\"isReqSaved\">\r\n                            <div class=\"alert alert-success\" role=\"alert\">\r\n                                Your complaint has been saved and will get back to you shortly.\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"col-lg-12 col-md-6 col-sm-6\" *ngIf=\"isReqFailed\">\r\n                            <div class=\"alert alert-danger\" role=\"alert\">\r\n                                Servers not responding, try again later.\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <mat-dialog-content>\r\n                        <form name=\"form\" class=\"example-form\" [formGroup]=\"form\" novalidate (ngSubmit)=\"saveComplaint()\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-lg-4 col-md-6 col-sm-6\">\r\n                                    <mat-form-field class=\"example-full-width\">\r\n                                        <input matInput placeholder=\"Name\" formControlName=\"username\" name=\"username\">\r\n                                    </mat-form-field>\r\n                                </div>\r\n                                <div class=\"col-lg-4 col-md-6 col-sm-6\">\r\n                                    <mat-form-field class=\"example-full-width\">\r\n                                        <input matInput placeholder=\"Mobile\" formControlName=\"usermobile\" name=\"usermobile\">\r\n                                    </mat-form-field>\r\n                                </div>\r\n                                <div class=\"col-lg-4 col-md-6 col-sm-6\">\r\n                                    <mat-form-field class=\"example-full-width\">\r\n                                        <input matInput placeholder=\"Email\" formControlName=\"useremail\" name=\"useremail\">\r\n                                    </mat-form-field>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-lg-12 col-md-6 col-sm-6\">\r\n                                    <mat-form-field class=\"example-full-width\" style=\"display: block\">\r\n                                        <input matInput placeholder=\"Request Title\" item-height=\"100px\" formControlName=\"reqtitle\" name=\"reqtitle\">\r\n                                    </mat-form-field>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-lg-12 col-md-6 col-sm-6\">\r\n                                    <mat-form-field class=\"example-full-width\" style=\"display: block\">\r\n                                        <textarea matInput placeholder=\"Complaint Message\" item-height=\"100px\" formControlName=\"reqmessage\" name=\"reqmessage\"></textarea>\r\n                                    </mat-form-field>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-lg-3 col-md-6 col-sm-6\">\r\n                                    <button type=\"submit\" mat-raised-button color=\"accent\" [disabled]=\"!form.valid\">Post Complaint</button>\r\n                                </div>\r\n                                <div class=\"col-lg-2 col-md-6 col-sm-6\">\r\n                                    <button mat-raised-button color=\"warn\" (click)=\"complaintFormCancel($event)\">Cancel</button>\r\n                                </div>\r\n                            </div>\r\n                        </form>\r\n                    </mat-dialog-content>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -512,8 +461,9 @@ module.exports = "<h1>this is complaint html</h1>"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComplaintComponent", function() { return ComplaintComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var _complaint_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./complaint.service */ "./src/app/complaints/complaint.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _complaint_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./complaint.service */ "./src/app/complaints/complaint.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -526,11 +476,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var ComplaintComponent = /** @class */ (function () {
     function ComplaintComponent(_httpService, complaintservice) {
         this._httpService = _httpService;
         this.complaintservice = complaintservice;
+        this.isReqSaved = false;
+        this.isReqFailed = false;
         this.apiValues = [];
+        this.form = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
+            username: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+            usermobile: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+            useremail: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+            reqtitle: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required),
+            reqmessage: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]("", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required)
+        });
     }
     ComplaintComponent.prototype.ngOnInit = function () {
         var comp = {
@@ -550,11 +510,13 @@ var ComplaintComponent = /** @class */ (function () {
         //this.saveComplaint();
     };
     ComplaintComponent.prototype.saveComplaint = function () {
-        var name = "rakesh";
-        var email = "rakesh@gmail.com";
-        var mobile = 7382476952;
-        var reqsub = "No Foot Paths";
-        var reqmessage = "Please solve foot paths problems as early as possible";
+        var _this = this;
+        console.log("$$$$", this.form.value);
+        var name = this.form.value.username;
+        var email = this.form.value.useremail;
+        var mobile = this.form.value.usermobile;
+        var reqsub = this.form.value.reqtitle;
+        var reqmessage = this.form.value.reqmessage;
         var comp = {
             id: 0,
             name: name,
@@ -567,9 +529,16 @@ var ComplaintComponent = /** @class */ (function () {
             admincoms: null,
             updatedat: ""
         };
+        console.log("heelo there ", comp);
         this.complaintservice.addComplaint(comp)
-            .subscribe(function (hero) {
-            console.log(hero);
+            .subscribe(function (result) {
+            console.log(result);
+            if (result === 1) {
+                _this.isReqSaved = true;
+            }
+            else {
+                _this.isReqFailed = false;
+            }
         });
     };
     ComplaintComponent.prototype.getAllComplaints = function () {
@@ -584,13 +553,19 @@ var ComplaintComponent = /** @class */ (function () {
             console.log("complaint by id: " + complaint);
         });
     };
+    ComplaintComponent.prototype.complaintFormCancel = function (e) {
+        if (e)
+            e.preventDefault();
+        this.form.reset();
+    };
     ComplaintComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
-            providers: [_complaint_service__WEBPACK_IMPORTED_MODULE_2__["ComplaintService"]],
-            template: __webpack_require__(/*! ./complaint.component.html */ "./src/app/complaints/complaint.component.html")
+            providers: [_complaint_service__WEBPACK_IMPORTED_MODULE_3__["ComplaintService"]],
+            template: __webpack_require__(/*! ./complaint.component.html */ "./src/app/complaints/complaint.component.html"),
+            styles: [__webpack_require__(/*! ./complaint.component.css */ "./src/app/complaints/complaint.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"], _complaint_service__WEBPACK_IMPORTED_MODULE_2__["ComplaintService"]])
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"], _complaint_service__WEBPACK_IMPORTED_MODULE_3__["ComplaintService"]])
     ], ComplaintComponent);
     return ComplaintComponent;
 }());
